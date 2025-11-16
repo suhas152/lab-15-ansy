@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm ci
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - echo "React build done"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
